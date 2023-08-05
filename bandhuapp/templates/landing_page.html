@@ -144,11 +144,12 @@
     <div class="row justify-content-center initiatives mx-1">
         <div class="col-lg-20 col-md-4 col-sm-6 px-1">
             <div class="col-sm card mx-auto" >
-                <img src="{{ initiatives.ankurayan_thumb.url }}" class="rounded-top card-img-top">
+                <img src="static/img/01.png" class="rounded-top card-img-top">
                 <div class="card-body p-3">
                     <h5 class="card-title content-title font-weight-bolder" style="text-align: center;">Ankurayan</h5>
                     <p class="content-description">
-                        {{ initiatives.ankurayan_desc|safe }}
+                        <!-- {{ initiatives.ankurayan_desc|safe }} -->
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque optio qui eius praesentium nisi laudantium labore amet eos. Error ut molestiae ullam iure optio dolores amet at reiciendis ipsa dicta.
                     </p>
                 </div>
                 <a href="{% url 'ankurayan:ankurayan' %}" class="stretched-link"></a>
@@ -205,28 +206,6 @@
     </div>
 </section>
 <!-- Initiatives Cards Section Ends -->
-<section id="current-updates" class="current-updates">
-    <div class="d-flex flex-row justify-content-center">
-        <table style="font-family:Verdana, Arial, Helvetica, sans-serif;font-size:14px;" width="97%">
-            <tbody>
-                <tr style="border:thin #314a7e inset;color:#083770;">
-                    <td style="color:#FFFFFF;padding-left: 10px;" width="15%" bgcolor="#083770">Current Updates:-</td>
-                    <td width="80%">
-                        <marquee behavior="scroll" scrollamount="4" direction="left" style="margin-top:2px;" onmouseover="this.stop();" onmouseout="this.start();" width="100%" class="current-updates-marquee">
-                            {% for update in current_updates %}
-                                {% if update.url %}
-                                <a href="{{ update.url }}" target="_blank">{{ update.desc | safe}}</a>
-                                {% else %}
-                                <a>{{update.desc | safe}}</a>
-                                {% endif %}
-                            {% endfor %}
-                        </marquee>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
 
 <!-- About secion -->
 <section id="about" class="mb-4">
@@ -258,7 +237,7 @@
                             <ul class="carousel-indicators">
                                 {% for img in mission.sanskarcarousel_set.all %}
                                 <li data-target="#sanskar-carousel" data-slide-to="{{ forloop.counter0 }}" 
-                                    class="{% if forloop.counter == 1 %}active{% endif %}"></li>
+                                class="{% if forloop.counter == 1 %}active{% endif %}"></li>
                                 {% endfor %}
                             </ul>
                             {% endif %}
@@ -294,7 +273,7 @@
                             <ul class="carousel-indicators">
                                 {% for img in mission.swarajcarousel_set.all %}
                                 <li data-target="#swaraj-carousel" data-slide-to="{{ forloop.counter0 }}" 
-                                    class="{% if forloop.counter == 1 %}active{% endif %}"></li>
+                                class="{% if forloop.counter == 1 %}active{% endif %}"></li>
                                 {% endfor %}
                             </ul>
                             {% endif %}
@@ -307,9 +286,9 @@
                             </div>
                         </div>
                     </div>
-
+                    
                     <div class="content-box col-md-7 col-lg-8 mt-4 order-md-first">
-
+                        
                         <h3 class="content-title d-none d-md-block">Swaraj</h3>
                         <p>
                             <strong>
@@ -332,7 +311,7 @@
                             <ul class="carousel-indicators">
                                 {% for img in mission.swabalambancarousel_set.all %}
                                 <li data-target="#swabalamban-carousel" data-slide-to="{{ forloop.counter0 }}" 
-                                    class="{% if forloop.counter == 1 %}active{% endif %}"></li>
+                                class="{% if forloop.counter == 1 %}active{% endif %}"></li>
                                 {% endfor %}
                             </ul>
                             {% endif %}
@@ -358,7 +337,7 @@
                     </div>
                 </div>
             </div>
-
+            
         </div>
     </div>
 </section>
@@ -383,7 +362,7 @@
                                                 <h5 class="card-title font-weight-bold">{{ event.name }}</h5>
                                                 <p class="mb-3">
                                                     {{ event.kendra }}{{ event.category.ankurayan }}{{ event.ashram }}{{ event.charity }}
-                                                <br>
+                                                    <br>
                                                 </p>
                                                 <a href="#" class="stretched-link" data-target="#recent-modal{{forloop.counter0}}" data-toggle="modal"></a>
                                             </div>
@@ -392,7 +371,7 @@
                                     {% endfor %}
                                 </ul>
                             </div>
-                                <div class="glide__arrows disable_arrows d-none d-md-block" data-glide-el="controls">
+                            <div class="glide__arrows disable_arrows d-none d-md-block" data-glide-el="controls">
                                 <button class="slider_arrow slider_arrow--prev glide__arrow glide__arrow--left" data-glide-dir="<">
                                     <i class="fas fa-arrow-circle-left"></i>
                                 </button>
@@ -470,7 +449,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         {{ volunteer.title }}
                     </h3>
                 </div>
-
+                
                 <div class="row justify-content-center">
                     <p class="parallax-description w-100 px-3" style="font-size:1.7em; line-height:35px; margin-bottom: 30px;">
                         {{ volunteer.tagline }}
@@ -527,7 +506,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="row justify-content-center mt-4">
                 <div class="col col-sm-5 add-images text-center">
                     <button type="button" class="btn btn-outline-primary" data-toggle="modal"
-                        data-target="#addToGallery">
+                    data-target="#addToGallery">
                         Upload Image
                     </button>
                     <div class="modal fade bd-example-modal-lg" tabindex="-1" id="addToGallery" role="dialog"
@@ -552,8 +531,8 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                                     aria-describedby="inputGroupFileAddon04">
                                                 <label class="custom-file-label" for="inputGroupFile04">Add
                                                     Image</label>
-                                            </div>
-                                        </div><br>
+                                                </div>
+                                            </div><br>
                                         <label class="left-label bld" for="">Caption</label>
                                         <textarea class="form-control" name="caption" rows="3"
                                             placeholder="Caption for image (optional)"></textarea><br>
@@ -589,8 +568,8 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                 <div class="modal-header">
                                     <h5 class="modal-title bld content-title">Approve Photos</h5>
                                     <button type="button" class="close" style="padding: .5rem 1rem;"
-                                        data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true" style="font-size: 2.375rem;">&times;</span>
+                                    data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true" style="font-size: 2.375rem;">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
@@ -668,6 +647,29 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     </div>
 </div>
 
+<section id="current-updates" class="current-updates" style="position: sticky;bottom: 0;z-index: 1;background-color: white; ">
+    <div class="d-flex flex-row justify-content-center">
+        <table style="font-family:Verdana, Arial, Helvetica, sans-serif;font-size:14px;" width="100%">
+            <tbody>
+                <tr style="border:thin #314a7e inset;color:#083770;">
+                    <td style="color:#FFFFFF;padding-left: 10px;" width="15%" bgcolor="#083770">Current Updates:-</td>
+                    <td width="80%">
+                        <marquee behavior="scroll" scrollamount="4" direction="left" style="margin-top:2px;" onmouseover="this.stop();" onmouseout="this.start();" width="100%" class="current-updates-marquee">
+                            <!-- {% for update in current_updates %}
+                                {% if update.url %}
+                                <a href="{{ update.url }}" target="_blank">{{ update.desc | safe}}</a>
+                                {% else %}
+                                <a>{{update.desc | safe}}</a>
+                                {% endif %}
+                            {% endfor %} -->
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nemo suscipit ex placeat? Tempore ut impedit doloribus quidem non voluptatum eos, voluptas cum in velit numquam quibusdam reiciendis! Quaerat, ipsum?
+                        </marquee>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
 {% endblock %}
 
 {% block scripts %}

@@ -37,6 +37,7 @@
 <div class="container-xxl m-auto">
 <div class="products-container">
   {% for product in data %}
+  <a href="{{ product.id }}" target="_blank">
   <div class="card product-card" style="max-width: 18rem;">
     <div class="discount-banner-container">
       <div class="arrow-left"></div>
@@ -65,6 +66,7 @@
       {% endif %}
     </div>
   </div>
+  </a>
   {% endfor %}
 </div>
 </div>

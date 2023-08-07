@@ -1,0 +1,101 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% load permissions %} 
+{% block title %} Products {% endblock %} {% block style %}
+<!-- Custom CSS -->
+<link rel="stylesheet" href="{% static 'css/bandhu.css' %}" />
+<link rel="stylesheet" href="{% static 'css/products.css' %}" />
+<!-- Custom Style -->
+<style>
+  #top-section {
+    background: url("{{ content.banner_image.url }}") 50% center no-repeat fixed;
+    width: 100vw;
+  }
+</style>
+{% endblock %} {% block navbar-links %}
+<li class="nav-item">
+  <a class="nav-link px-3 px-lg-2" href="{% url 'home' %}">Home</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link px-3 px-lg-2" href="#about">About</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link px-3 px-lg-2" href="#ankurayans">Ankurayans</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link px-3 px-lg-2" href="#contact">Contact</a>
+</li>
+{% endblock %}
+
+{% block showcase-title-container %}
+<div class="slider-txt-container" style="padding: 200px 0 200px 0;">
+    <h2 class="bold-txt"> Products </h2>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="m-auto" style="padding:6rem;">
+<!-- <div class> -->
+  <div class="card mb-3" style="max-width: 69vw; margin: auto; border-radius: 32px;">
+    <div class="row g-0" style="background-color: #f6f6f6; padding: 29px; border-radius: 20px;box-shadow: 6px 5px 5px #0000001f;">
+      <div class="col-md-6">
+        <img
+          src="{{data.image.url}}"
+          alt="Trendy Pants and Shoes"
+          class="img-fluid rounded-start"
+        />
+      </div>
+      <div class="col-md-6">
+        <div class="card-body">
+          <h1 class="card-title"><b>{{data.name}}</b></h1>
+          <p class="card-text">
+           {{data.desc}}
+          </p>
+          
+          <!-- <div class="card-footer product-card-footer"> -->
+            <span class="price-container">
+              ₹{% widthratio data.discount|add:"-100" -100 data.price %} 
+            </span>
+            &nbsp;
+            <span class="strikethrough">
+              M.R.P.: ₹{{ data.price }}
+            </span>
+            {% if data.inventory < 10 and data.inventory != 0 %}
+              <br/>
+              <span class="inventory-message">Hurry, only {{ data.inventory }} left!</span>
+            {% endif %}
+            {% if data.inventory == 0 %}
+              <br/>
+              <span class="inventory-message">Out of Stock</span>
+            {% endif %}
+            &nbsp;
+            <span class="discount-text">
+             {{ data.discount }}% off
+            </span>
+          <!-- </div> -->
+
+
+
+          <h4>Details</h4>
+          <ul>
+          {% for detail in details %}
+            <li>{{detail.detail}}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- </div> -->
+
+{% endblock %}
+<!-- {% block scripts %}
+<script>
+  const js
+</script>
+{% endblock %} -->
+
+
+
+

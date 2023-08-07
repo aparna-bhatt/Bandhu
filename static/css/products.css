@@ -56,6 +56,20 @@
   border-bottom-right-radius: 1px;
 }
 
+.discount-text {
+  /* padding: 4px; */
+  /* background-color: #ff9800; */
+  /* min-width: 60px; */
+  /* height: 30px; */
+  color: green;
+  /* color: black; */
+  font-size: 1.1rem;
+  /* line-height: 1; */
+  font-weight: bold;
+  /* border-top-right-radius: 1px; */
+  /* border-bottom-right-radius: 1px; */
+}
+
 .discount-banner-container::before {
   position: absolute;
   top: 15px;

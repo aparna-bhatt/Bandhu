@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import HomePage, Product
+from .models import HomePage, Product, ProductDetail
 from django.template.defaultfilters import truncatechars
 # Register your models here.
 
@@ -17,3 +17,7 @@ class ProductAdmin(admin.ModelAdmin):
 @admin.register(HomePage)
 class HomePageAdmin(admin.ModelAdmin):
     list_display = ['tagline']
+
+@admin.register(ProductDetail)
+class ProductDetailsAdmin(admin.ModelAdmin):
+    list_display = ['detail','product' ]
